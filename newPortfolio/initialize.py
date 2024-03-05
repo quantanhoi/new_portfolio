@@ -1,4 +1,4 @@
-from newPortfolio.database.database import db
+from database.database import db
 from models import Skill, Project, Contact, Topic, Newspaper
 
 

@@ -8,3 +8,4 @@ def get_skills():
     query = Skill.select()
     skills_list = [{"id": skill.id, "name": skill.name} for skill in query]
     return jsonify(skills_list)
+

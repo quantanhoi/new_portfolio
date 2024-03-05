@@ -1,6 +1,5 @@
 from flask import Blueprint, jsonify
 from models.project import Project
-
 projects_blueprint = Blueprint('projects', __name__)
 @projects_blueprint.route('/projects', methods=['GET'])
 def get_projects():

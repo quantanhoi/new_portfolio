@@ -1,0 +1,28 @@
+
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.box_title {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.newspaper-list {
+    flex: 1;
+    padding: 1px;
+    flex: 100%;
+}
+.topics-list{
+    flex: 1;
+    padding: 1px;
+    flex: 20%;
+}
+
+
+.home-box {
+    border: 1px solid black;
+}

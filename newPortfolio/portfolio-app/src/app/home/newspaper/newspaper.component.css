@@ -1,0 +1,64 @@
+.newspaper-box {
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: left; 
+    gap: 5px; 
+    width: 70%;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 700;
+    font-style: bold;
+    overflow: hidden;
+    position: relative;
+}
+
+.newspaper-box a {
+    text-decoration: none;
+    color: black;
+}
+
+.newspaper-box a:hover {
+    text-decoration: underline;
+}
+
+
+.topic-text {
+    font-size: 0.8em;
+    font-weight: 150;
+    font-style: bold;
+}
+
+.newspaper-box a:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    opacity: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 500px;
+    transition: letter-spacing 0.5s, left 0.5s;
+}
+
+.newspaper-box a:hover:before {
+    content: attr(data-text);
+    opacity: 0.5;
+    left: 50%;
+    letter-spacing: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.newspaper-box a:before {
+    background: #ffeaa7;
+}

@@ -1,0 +1,23 @@
+.topic-box {
+    border: 1px solid #333;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: left; 
+    gap: 10px; 
+    width: 50%;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 300;
+    font-style: bold;
+}
+
+.topic-box a {
+    text-decoration: none;
+    color: black;
+}
+
+.topic-box a:hover {
+    text-decoration: underline;
+}

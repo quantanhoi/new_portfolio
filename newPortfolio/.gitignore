@@ -1,1 +1,7 @@
-
+lib/
+bin/
+portfolio-app/node_modules
+__pycache__/
+models/__pycache__/
+databases/__pycache__/
+routes/__pycache__/

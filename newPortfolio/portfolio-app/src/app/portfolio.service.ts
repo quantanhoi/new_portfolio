@@ -8,7 +8,6 @@ import { catchError, map, mergeMap } from 'rxjs/operators';
 })
 export class PortfolioService {
   private apiUrl: string = 'http://127.0.0.1:5000/api/';
-  private project: string = 'http://127.0.0.1:5000/api/projects';
   private githubApiUrl: string = 'https://api.github.com/repos/';
 
   constructor(private http: HttpClient) { }
@@ -19,6 +18,11 @@ export class PortfolioService {
   getProjects(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}projects`);
   }
+
+  getContacts(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}contacts`);
+  }
+  
   getGitHubProjectDetails(repoPath: string): Observable<any> {
     return this.http.get(`${this.githubApiUrl}${repoPath}`).pipe(
       catchError(error => {

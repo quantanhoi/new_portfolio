@@ -10,6 +10,7 @@ import { TopicComponent } from './home/topic/topic.component';
 import { FirstImageComponent } from './home/newspaper/first-image/first-image.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     NewspaperComponent,
     TopicComponent,
     FirstImageComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    ContactComponent
   ],
   imports: [
     HttpClientModule,

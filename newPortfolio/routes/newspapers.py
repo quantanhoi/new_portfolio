@@ -6,7 +6,7 @@ from peewee import IntegrityError
 newspapers_blueprint = Blueprint('newspapers', __name__)
 @newspapers_blueprint.route('/api/newspapers', methods=['GET'])
 def get_newspaper():
-    query = Newspaper.select()
+    query = Newspaper.select().order_by(Newspaper.id.desc())
     newspapers_list = [{"id": newspaper.id, 
                         "title": newspaper.title, 
                         "url": newspaper.url, 

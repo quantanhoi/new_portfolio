@@ -13,8 +13,10 @@
 <section id="projects">
     <h2>Projects</h2>
     <div *ngFor="let project of projects" class="project">
-        <img [src]="project.icon" [alt]="project.name">
-        <h3>{{ project.name }}</h3>
-        <p>{{ project.description || 'This is the project description.' }}</p>
+        <a [href]="project.url" target="_blank">
+            <img [src]="project.icon" [alt]="project.name">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description || 'This is the project description.' }}</p>
+        </a>
     </div>
 </section>

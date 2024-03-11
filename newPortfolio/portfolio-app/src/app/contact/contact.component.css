@@ -10,10 +10,14 @@
 .contact {
     flex: 1;
     padding: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #150c0c;
+    border-color: 1px solid black;
     border-radius: 5px;
     background-color: transparent;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 50%;
+    height: auto;
+    margin: 10px;
 }
 
 .contact h3 {

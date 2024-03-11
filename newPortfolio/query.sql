@@ -64,7 +64,12 @@ INSERT INTO contact (name, detail) VALUES
 ('Facebook', 'https://www.facebook.com/thieuquang.trung.9'),
 ('Github', 'https://github.com/quantanhoi');
 
-
+INSERT INTO topics VALUES (1, 'Code');
+INSERT INTO topics VALUES (2, 'AI');
+INSERT INTO topics VALUES (3, 'Technology');
+INSERT INTO topics VALUES (5, 'Industry');
+INSERT INTO topics VALUES (6, 'Science');
+INSERT INTO topics VALUES (7, 'Economy');
 INSERT INTO newspapers VALUES (1, 'Simple REST API using Flask and Peewee', 'https://medium.com/@prabhath_kiran/simple-rest-api-using-flask-and-peewee-3d75c7bff515', 'Code');
 INSERT INTO newspapers VALUES (2, 'penAI wants to make a walking, talking humanoid robot smarter', 'https://www.popsci.com/technology/openai-wants-to-make-a-walking-talking-humanoid-robot-smarter/', 'AI');
 INSERT INTO newspapers VALUES (3, 'High-speed humanoid feels like a step change in robotics', 'https://newatlas.com/robotics/sanctuary-phoenix-autonomous-speed-hands/', 'AI');
@@ -82,9 +87,3 @@ INSERT INTO newspapers VALUES (14, 'Stadt Frankfurt ermöglicht 14 neue Hochhäu
 INSERT INTO newspapers VALUES (15, 'Angeblicher Tesla-Hack mit Flipper Zero entpuppt sich als Sturm im Wasserglas', 'https://www.heise.de/news/Angeblicher-Tesla-Hack-mit-Flipper-Zero-entpuppt-sich-als-Sturm-im-Wasserglas-9650018.html', 'Technology');
 
 
-INSERT INTO topics VALUES (1, 'Code');
-INSERT INTO topics VALUES (2, 'AI');
-INSERT INTO topics VALUES (3, 'Technology');
-INSERT INTO topics VALUES (5, 'Industry');
-INSERT INTO topics VALUES (6, 'Science');
-INSERT INTO topics VALUES (7, 'Economy');

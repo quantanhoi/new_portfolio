@@ -1,0 +1,29 @@
+.projects {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap; 
+}
+
+.project {
+    flex: 1;
+    max-width: 40%;
+    min-width: 100px;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-self: center;
+}
+
+.project:hover {
+    border: 2px solid black;
+}
+
+.project img {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}

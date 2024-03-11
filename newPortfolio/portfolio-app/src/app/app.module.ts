@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,8 @@ import { NewspaperComponent } from './home/newspaper/newspaper.component';
 import { HttpClientModule} from '@angular/common/http';
 import { TopicComponent } from './home/topic/topic.component';
 import { FirstImageComponent } from './home/newspaper/first-image/first-image.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,19 @@ import { FirstImageComponent } from './home/newspaper/first-image/first-image.co
     HomeComponent,
     NewspaperComponent,
     TopicComponent,
-    FirstImageComponent
+    FirstImageComponent,
+    PortfolioComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

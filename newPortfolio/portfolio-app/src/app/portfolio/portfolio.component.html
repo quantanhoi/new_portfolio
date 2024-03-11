@@ -1,0 +1,20 @@
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        Hi! I'm Trung, a student at University of Applied Science Darmstadt studying Computer Science. I'm
+        passionate about application developing and eager to share my work with you. My skills include:
+    </p>
+    <ul id="skills">
+        <li *ngFor="let skill of skills">{{ skill.name }}</li>
+    </ul>
+</section>
+
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div *ngFor="let project of projects" class="project">
+        <img [src]="project.icon" [alt]="project.name">
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.description || 'This is the project description.' }}</p>
+    </div>
+</section>

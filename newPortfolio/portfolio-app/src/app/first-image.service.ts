@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FirstImageService {
-  private apiUrl: string = 'http://127.0.0.1:5000/api/get-first-image'
+  private apiUrl: string = 'http://16.171.182.163:5000/api/get-first-image'
 
 
   constructor(private http: HttpClient) { }

@@ -7,7 +7,7 @@ import { catchError, map, mergeMap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PortfolioService {
-  private apiUrl: string = 'http://127.0.0.1:5000/api/';
+  private apiUrl: string = 'http://16.171.182.163:5000/api/';
   private githubApiUrl: string = 'https://api.github.com/repos/';
 
   constructor(private http: HttpClient) { }

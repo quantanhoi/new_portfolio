@@ -333,9 +333,9 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <ul>
-  <li><a  href="/" data-text="Home">Home</a></li>
-  <li><a  href="/codings" data-text="Coding">Coding</a></li>
-  <li><a  href="/skills" data-text="About">About Me</a></li>
-  <li><a  href="/contacts" data-text="Contact">Contact</a></li>
+  <li><a  [routerLink]="['/']" data-text="Home">Home</a></li>
+  <li><a  [routerLink]="['/codings']"  data-text="Coding">Coding</a></li>
+  <li><a  [routerLink]="['/skills']"  data-text="About">About Me</a></li>
+  <li><a  [routerLink]="['/contacts']"  data-text="Contact">Contact</a></li>
 </ul>
 <router-outlet></router-outlet>

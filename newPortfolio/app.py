@@ -17,4 +17,4 @@ app.register_blueprint(topics_blueprint)
 app.register_blueprint(first_image_blueprint)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host= "0.0.0.0", debug=True)

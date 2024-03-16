@@ -1,16 +1,26 @@
+.content-container {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
 .newspaper-box {
+
+
+
     border: 1px solid #333;
     padding: 10px;
     margin: 10px;
-    display: flex;
-    flex-direction: column;
     align-items: left; 
     gap: 5px; 
-    width: 70%;
+    width: 45%;
     border-radius: 10px;
     font-size: 1em;
     font-weight: 700;
     font-style: bold;
+
+    /*color animation hoovering*/
     overflow: hidden;
     position: relative;
 }
@@ -27,8 +37,9 @@
 
 .topic-text {
     font-size: 0.8em;
-    font-weight: 150;
+    font-weight: 350;
     font-style: bold;
+    font-family: 'Playfair Display', serif;
 }
 
 .newspaper-box a:before {
@@ -61,4 +72,12 @@
 
 .newspaper-box a:before {
     background: #ffeaa7;
+}
+
+
+
+
+.newspaper-title {
+    font-family: 'Playfair Display', serif;
+    font-size: large;
 }

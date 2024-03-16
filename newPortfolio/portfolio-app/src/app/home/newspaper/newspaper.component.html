@@ -1,5 +1,8 @@
-<div *ngFor="let newspaper of newspapers" class="newspaper-box">
-    <a [href]="newspaper.url" target="_blank">{{ newspaper.title }}</a>
-    <p class="topic-text">Topic: {{ newspaper.topic }}</p>  
-    <app-first-image [newspaperUrl]="newspaper.url"></app-first-image>
-</div>
+<section class="content-container">
+    <div *ngFor="let newspaper of newspapers" class="newspaper-box">
+        <a class="newspaper-title" [href]="newspaper.url" target="_blank">{{ newspaper.title }}</a>
+        <p class="topic-text">Topic: {{ newspaper.topic }}</p>  
+        <app-first-image class="first-image" [newspaperUrl]="newspaper.url"></app-first-image>
+    </div>
+</section>
+

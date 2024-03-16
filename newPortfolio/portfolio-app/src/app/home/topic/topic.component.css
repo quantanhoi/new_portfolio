@@ -9,8 +9,9 @@
     width: 50%;
     border-radius: 10px;
     font-size: 1em;
-    font-weight: 300;
+    font-weight: 600;
     font-style: bold;
+    font-family: 'Playfair Display', serif;
 }
 
 .topic-box a {

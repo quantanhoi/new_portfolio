@@ -4,7 +4,7 @@ from assets.apiKey import api_key
 match_id = '1-048d57d0-57b8-4c3f-9cbc-d57b9e138926'
 
 # Set the URL for the request
-match_detail_url = f'https://open.faceit.com/data/v4/matches/{match_id}'
+
 # player_detail_url = 'https://open.faceit.com/data/v4/players/'
 game_id = 'cs2'
 
@@ -20,7 +20,8 @@ headers = {
     'Authorization': f'Bearer {api_key}'
 }
 
-def get_match_details():
+def get_match_details(match_id):
+    match_detail_url = f'https://open.faceit.com/data/v4/matches/{match_id}'
     # Make the GET request
     response = requests.get(match_detail_url, headers=headers)
 
@@ -63,7 +64,7 @@ def get_match_details():
     
     
 def get_player_details(player_id, team_map_stats):
-    limit = 20
+    limit = 30
     player_detail_url = f'https://open.faceit.com/data/v4/players/{player_id}/games/{game_id}/stats?offset=0&limit={limit}'
     response = requests.get(player_detail_url, headers=headers)
     player_detail = response.json()
@@ -106,5 +107,7 @@ def map_win_ratio(map_stats):
         else:
             print(f'{map_name}: No matches played')
             
-get_match_details()
+#
+# 
+# get_match_details()
 

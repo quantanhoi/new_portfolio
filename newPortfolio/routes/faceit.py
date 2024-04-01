@@ -31,15 +31,17 @@ def getBestMapList():
         match_details = response.json()
         team = match_details['teams']
         faction1 = team['faction1']
+        faction1_name = faction1['name']
         faction2 = team['faction2']
+        faction2_name = faction2['name']
         
         for player in faction1['roster']:
             get_player_details(player['player_id'], team1_map_stats)
         for player in faction2['roster']:  
             get_player_details(player['player_id'], team2_map_stats)
         final_response = {
-        "team1": map_win_ratio_calc(team1_map_stats),
-        "team2": map_win_ratio_calc(team2_map_stats)
+        f'{faction1_name}': map_win_ratio_calc(team1_map_stats),
+        f'{faction2_name}': map_win_ratio_calc(team2_map_stats)
         }
         team1_map_stats.clear()
         team2_map_stats.clear()

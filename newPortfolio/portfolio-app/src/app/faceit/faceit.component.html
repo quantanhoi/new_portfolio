@@ -1,0 +1,34 @@
+<div class="container">
+    <div>
+        <input [(ngModel)]="matchId" type="text" placeholder="Enter match ID" class="input_bar">
+        <button (click)="onSubmit()" class="submit_button">Enter</button>
+    </div>
+
+
+</div>
+
+<div *ngIf="matchDetails" class="match_detail">
+    <div *ngFor="let team of matchDetails | keyvalue" class="team_detail">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4">{{ team.key }}</th>
+                </tr>
+                <tr>
+                    <th>Map</th>
+                    <th>Name</th>
+                    <th>Total Matches Played</th>
+                    <th>Win Rate Ratio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let map of team.value | keyvalue">
+                    <td><img [src]="getMapImageUrl(map.key)" alt="{{ map.key }}" style="width: 100px; height: 100px;"></td>
+                    <td>{{ map.key }}</td>
+                    <td>{{ map.value.total_map_played }}</td>
+                    <td [ngStyle]="{'background-color': getWinRateColor(map.value.win_rate)}">{{ map.value.win_rate }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

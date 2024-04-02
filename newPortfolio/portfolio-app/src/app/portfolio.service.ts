@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin, of } from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
+import { MatchDetails } from './models/match-details.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,16 @@ export class PortfolioService {
 
   getContacts(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}contacts`);
+  }
+
+  getMatchDetails(matchId: string): Observable<MatchDetails> {
+    const payload = {
+      match_id: matchId
+    };
+
+    return this.http.post<MatchDetails>(`${this.apiUrl}faceit`, payload).pipe(
+      map(response => response as MatchDetails)
+    );
   }
   
   getGitHubProjectDetails(repoPath: string): Observable<any> {

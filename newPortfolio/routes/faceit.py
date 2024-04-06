@@ -59,7 +59,7 @@ def get_player_details(player_id, team_map_stats):
         player_id (_type_): _description_
         team_map_stats (_type_): dictionary containing map stats for whole team
     """
-    limit = 30
+    limit = 20
     player_detail_url = f'https://open.faceit.com/data/v4/players/{player_id}/games/{game_id}/stats?offset=0&limit={limit}'
     response = requests.get(player_detail_url, headers=headers)
     player_detail = response.json()

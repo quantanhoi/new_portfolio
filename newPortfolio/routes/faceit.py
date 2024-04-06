@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, request
 import requests
 from assets.apiKey import api_key
 import json
+from time import process_time
 
 game_id = 'cs2'
 # Set the headers, including the Authorization header with the API key
@@ -10,15 +11,14 @@ headers = {
     'Authorization': f'Bearer {api_key}'
 }
 
-#initialize dictionay
-map_stats = {}
-team1_map_stats = {}
-team2_map_stats = {}
-
 
 faceit_blueprint = Blueprint('faceit', __name__)
 @faceit_blueprint.route('/api/faceit', methods=['POST'])
 def getBestMapList():
+    processTimeStart = process_time()
+    #initialize dictionary for team 1 and team 2
+    team1_map_stats = {}
+    team2_map_stats = {}
     data = request.json
     match_id = data.get('match_id')
     match_detail_url = f'https://open.faceit.com/data/v4/matches/{match_id}'
@@ -45,13 +45,21 @@ def getBestMapList():
         }
         team1_map_stats.clear()
         team2_map_stats.clear()
+        processTimeStop = process_time()
+        print("Elapsed time during the whole program in seconds:", processTimeStop-processTimeStart)  
         return jsonify(final_response), 200
     return jsonify({"error": "Match not found"}), 404
 
-    
-    
+
+
 def get_player_details(player_id, team_map_stats):
-    limit = 20
+    """Get the player's match history and update the map stats dictionary
+
+    Args:
+        player_id (_type_): _description_
+        team_map_stats (_type_): dictionary containing map stats for whole team
+    """
+    limit = 30
     player_detail_url = f'https://open.faceit.com/data/v4/players/{player_id}/games/{game_id}/stats?offset=0&limit={limit}'
     response = requests.get(player_detail_url, headers=headers)
     player_detail = response.json()
@@ -61,22 +69,19 @@ def get_player_details(player_id, team_map_stats):
         map = match_details['Map']
         result = match_details['Result']
         update_map_stats(map, result, team_map_stats)
-    map_stats.clear()
+
 
 def update_map_stats(map_name, result, team_map_stats):
     # If the map is not already in the dictionary, add it with initial win/loss counts
-    if map_name not in map_stats:
-        map_stats[map_name] = {'wins': 0, 'losses': 0}
+
     
     if map_name not in team_map_stats:
         team_map_stats[map_name] = {'wins': 0, 'losses': 0}
     
     # Increment the win or loss count based on the result
     if result == '1':  # win = 1, loss = 0
-        map_stats[map_name]['wins'] += 1
         team_map_stats[map_name]['wins'] += 1
     else:  
-        map_stats[map_name]['losses'] += 1
         team_map_stats[map_name]['losses'] += 1
         
             

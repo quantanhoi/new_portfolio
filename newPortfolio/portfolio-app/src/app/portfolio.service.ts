@@ -9,6 +9,7 @@ import { MatchDetails } from './models/match-details.model';
 })
 export class PortfolioService {
   private apiUrl: string = 'http://16.171.182.163:5000/api/';
+  private testApiUrl: string = 'http://localhost:5001/api/';
   private githubApiUrl: string = 'https://api.github.com/repos/';
 
   constructor(private http: HttpClient) { }

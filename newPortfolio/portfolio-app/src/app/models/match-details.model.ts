@@ -3,8 +3,21 @@ interface MapDetail {
     total_map_played: number;
 }
 
-interface TeamDetail {
+
+interface mapStatistics {
     [mapName: string]: MapDetail;
+}
+interface playerStatistics {
+    [playerName: string]: playerDetail;
+}
+interface playerDetail {
+    [mapName: string]: MapDetail;
+}
+
+
+interface TeamDetail {
+    map_statistics: mapStatistics;
+    player_statistics: playerStatistics;
 }
 
 export interface MatchDetails {

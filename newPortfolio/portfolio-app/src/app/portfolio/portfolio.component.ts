@@ -18,4 +18,7 @@ export class PortfolioComponent {
     this.portfolioService.getEnhancedProjects().subscribe(data => {
       this.projects = data});
   }
+  getProjectImage(project_img: string): string {
+    return `assets/project_images/${project_img}`;
+  }
 }

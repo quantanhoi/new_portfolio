@@ -15,7 +15,7 @@
     <section class="projects">
         <div *ngFor="let project of projects" class="project">
             <a [href]="project.url" target="_blank">
-                <img [src]="project.icon" [alt]="project.name">
+                <img [src]="getProjectImage(project.icon)" [alt]="project.name">
                 <h3>{{ project.name }}</h3>
                 <p>{{ project.description || 'This is the project description.' }}</p>
             </a>

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TopicService {
-  private apiUrl: string = 'http://16.171.182.163:5000/api/topics';
+  private apiUrl: string = 'https://trungthieu1999.social:5000/api/topics';
 
 
   constructor(private http: HttpClient) { }

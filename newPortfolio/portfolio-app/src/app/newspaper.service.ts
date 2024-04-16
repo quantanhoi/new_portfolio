@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NewspaperService {
-  private apiUrl: string = 'http://16.171.182.163:5000/api/newspapers';
+  private apiUrl: string = 'https://trungthieu1999.social:5000/api/newspapers';
 
   constructor(private http: HttpClient) { }
 

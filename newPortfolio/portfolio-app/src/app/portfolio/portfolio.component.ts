@@ -19,6 +19,6 @@ export class PortfolioComponent {
       this.projects = data});
   }
   getProjectImage(project_img: string): string {
-    return `assets/project_images/${project_img}`;
+    return `assets/project_icons/${project_img}`;
   }
 }

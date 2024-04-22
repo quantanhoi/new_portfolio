@@ -30,7 +30,7 @@ ul li {
 ul li a {
     color: #333;
     text-decoration: none;
-    font-size: 1.4em;
+    font-size: 1.3em;
     padding: 2px 10px;
     display: inline-flex;
     font-weight: 700;
@@ -43,7 +43,6 @@ ul:hover li a {
 
 ul li:hover a {
     color: #000;
-    background: transparent;
 }
 
 ul li a:before {
@@ -96,4 +95,19 @@ ul li:nth-child(6n + 5) a:before {
 
 ul li:nth-child(6n + 6) a:before {
     background: #ffeaa7;
+}
+
+.navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    background-color: antiquewhite;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
 }

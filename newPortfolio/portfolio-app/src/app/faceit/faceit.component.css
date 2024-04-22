@@ -105,3 +105,15 @@
         transform: rotate(360deg);
     }
 }
+
+.content-box {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center;     /* Centers the content vertically */
+    flex-direction: column;
+    border: 1px solid black;
+    width: 100%;
+
+
+}
+

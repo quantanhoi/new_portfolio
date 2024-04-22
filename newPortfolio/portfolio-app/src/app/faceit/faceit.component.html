@@ -1,78 +1,77 @@
-<div class="container">
-    <div>
-        <input [(ngModel)]="matchId" type="text" placeholder="Enter match ID" class="input_bar">
-        <button (click)="onSubmit()" class="submit_button">Enter</button>
-    </div>
-
-
-</div>
-<div class="loader" *ngIf="isLoading"></div>
-
-<div class="match_detail">
-    <div *ngFor="let team of matchDetails | keyvalue" class="team_detail">
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="4">{{ team.key }}</th>
-                </tr>
-                <tr>
-                    <th>Map</th>
-                    <th>Name</th>
-                    <th>Total Matches Played</th>
-                    <th>Average Win Rate Ratio</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let map of team.value.map_statistics| keyvalue">
-                    <td><img [src]="getMapImageUrl(map.key)" alt="{{ map.key }}" style="width: 100px; height: 100px;"></td>
-                    <td>{{ map.key }}</td>
-                    <td>{{ map.value.total_map_played }}</td>
-                    <td [ngStyle]="{'background-color': getWinRateColor(map.value.win_rate)}">{{ map.value.win_rate }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-</div>
-<div *ngIf="matchDetails" class="match_detail">
-    <div *ngFor="let team of matchDetails | keyvalue" class="team_detail">
-        <div *ngFor="let player of team.value.player_statistics | keyvalue">
-            <thead>
-                <tr>
-                    <th colspan="3">{{ player.key }}</th>
-                </tr>
-                <tr>
-                    <th>Name</th>
-                    <th>Total Matches Played</th>
-                    <th>Average Win Rate Ratio</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let map of player.value | keyvalue">
-                    <td>{{ map.key }}</td>
-                    <td>{{ map.value.total_map_played }}</td>
-                    <td [ngStyle]="{'background-color': getWinRateColor(map.value.win_rate)}">{{ map.value.win_rate }}</td>
-                </tr>
-            </tbody>
+<div class="content">
+    <div class="container">
+        <div>
+            <input [(ngModel)]="matchId" type="text" placeholder="Enter match ID" class="input_bar">
+            <button (click)="onSubmit()" class="submit_button">Enter</button>
         </div>
     </div>
-</div>
-
-
-<div>
-    <h2>Most frequently answered questions:</h2>
-    <ul>
-        <li><h3>What is this for?</h3></li>
-        <p>This is a simple web application that checks the statistics of a match in Faceit. It shows the total matches played and the win rate ratio of each map.</p>
-        <li><h3>How to use this?</h3></li>
-        <p>Enter the match ID in the input bar and click the Enter button. The match details will be shown below.</p>
-        <li><h3>What is the win rate ratio?</h3></li>
-        <p>The win rate ratio is the percentage of the total matches won by the team in a specific map. Only most recent <strong><span style="background-color: #f78d59;">30</span></strong> matches will be taken into account.</p>
-        <li><h3>How can I get match id?</h3></li>
-        <p>Go to the match room in Faceit and copy the match id from the URL. The match id is the last part of the URL.</p>
-        <p>Example: https://www.faceit.com/en/cs2/room/1-c4727e98-66ac-4359-9dea-dcade7be46fc
-            <br>Match ID: 1-c4727e98-66ac-4359-9dea-dcade7be46fc
-        </p>
-    </ul>
-
+    <div class="loader" *ngIf="isLoading"></div>
+    <div class="match_detail">
+        <div *ngFor="let team of matchDetails | keyvalue" class="team_detail">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4">{{ team.key }}</th>
+                    </tr>
+                    <tr>
+                        <th>Map</th>
+                        <th>Name</th>
+                        <th>Total Matches Played</th>
+                        <th>Average Win Rate Ratio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let map of team.value.map_statistics| keyvalue">
+                        <td><img [src]="getMapImageUrl(map.key)" alt="{{ map.key }}" style="width: 100px; height: 100px;"></td>
+                        <td>{{ map.key }}</td>
+                        <td>{{ map.value.total_map_played }}</td>
+                        <td [ngStyle]="{'background-color': getWinRateColor(map.value.win_rate)}">{{ map.value.win_rate }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div *ngIf="matchDetails" class="match_detail">
+        <div *ngFor="let team of matchDetails | keyvalue" class="team_detail">
+            <div *ngFor="let player of team.value.player_statistics | keyvalue">
+                <thead>
+                    <tr>
+                        <th colspan="3">{{ player.key }}</th>
+                    </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th>Total Matches Played</th>
+                        <th>Average Win Rate Ratio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let map of player.value | keyvalue">
+                        <td>{{ map.key }}</td>
+                        <td>{{ map.value.total_map_played }}</td>
+                        <td [ngStyle]="{'background-color': getWinRateColor(map.value.win_rate)}">{{ map.value.win_rate }}</td>
+                    </tr>
+                </tbody>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div>
+        <h2>Most frequently answered questions:</h2>
+        <ul>
+            <li><h3>What is this for?</h3></li>
+            <p>This is a simple web application that checks the statistics of a match in Faceit. It shows the total matches played and the win rate ratio of each map.</p>
+            <li><h3>How to use this?</h3></li>
+            <p>Enter the match ID in the input bar and click the Enter button. The match details will be shown below.</p>
+            <li><h3>What is the win rate ratio?</h3></li>
+            <p>The win rate ratio is the percentage of the total matches won by the team in a specific map. Only most recent <strong><span style="background-color: #f78d59;">30</span></strong> matches will be taken into account.</p>
+            <li><h3>How can I get match id?</h3></li>
+            <p>Go to the match room in Faceit and copy the match id from the URL. The match id is the last part of the URL.</p>
+            <p>Example: https://www.faceit.com/en/cs2/room/1-c4727e98-66ac-4359-9dea-dcade7be46fc
+                <br>Match ID: 1-c4727e98-66ac-4359-9dea-dcade7be46fc
+            </p>
+        </ul>
+    
+    </div>
 </div>

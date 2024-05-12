@@ -4,7 +4,7 @@ from assets.apiKey import api_key
 import json
 from time import process_time
 from scripts.timeout import timeout
-import time #for testing purpose
+
 
 game_id = 'cs2'
 # Set the headers, including the Authorization header with the API key
@@ -16,42 +16,45 @@ headers = {
 
 faceit_blueprint = Blueprint('faceit', __name__)
 @faceit_blueprint.route('/api/faceit', methods=['POST'])
-@timeout(seconds=5)
+@timeout(seconds=15)
 def getBestMapList():
     processTimeStart = process_time()
+    try:
+        
     #initialize dictionary for team 1 and team 2, team1_map_stats contains map statistic for whole team
     #team1_player_stats contains each player statistics in a team
-    time.sleep(6) #for testing purpose
-    team1_map_stats = {}
-    team1_player_stats = {}
-    team2_map_stats = {}
-    team2_player_stats = {}
-    data = request.json
-    match_id = data.get('match_id')
-    match_detail_url = f'https://open.faceit.com/data/v4/matches/{match_id}'
-    response = requests.get(match_detail_url, headers=headers)
-    if response.status_code == 200:
-        match_details = response.json()
-        team = match_details['teams']
-        faction1 = team['faction1']
-        faction1_name = faction1['name']
-        faction2 = team['faction2']
-        faction2_name = faction2['name']
-        for player in faction1['roster']:
-            team1_player_stats[player['nickname']] = get_player_details(player['player_id'], team1_map_stats)
-            
-        for player in faction2['roster']:  
-            team2_player_stats[player['nickname']] = get_player_details(player['player_id'], team2_map_stats)
-        final_response = {
-        f'{faction1_name}': {"map_statistics": calculate_team_map_win_rate(team1_player_stats), "player_statistics": team1_player_stats},
-        f'{faction2_name}': {"map_statistics": calculate_team_map_win_rate(team2_player_stats), "player_statistics": team2_player_stats}
-        }
-        team1_map_stats.clear()
-        team2_map_stats.clear()
-        processTimeStop = process_time()
-        print("Elapsed time during the whole program in seconds:", processTimeStop-processTimeStart)  
-        return jsonify(final_response), 200
-    return jsonify({"error": "Match not found"}), 404
+        team1_map_stats = {}
+        team1_player_stats = {}
+        team2_map_stats = {}
+        team2_player_stats = {}
+        data = request.json
+        match_id = data.get('match_id')
+        match_detail_url = f'https://open.faceit.com/data/v4/matches/{match_id}'
+        response = requests.get(match_detail_url, headers=headers)
+        if response.status_code == 200:
+            match_details = response.json()
+            team = match_details['teams']
+            faction1 = team['faction1']
+            faction1_name = faction1['name']
+            faction2 = team['faction2']
+            faction2_name = faction2['name']
+            for player in faction1['roster']:
+                team1_player_stats[player['nickname']] = get_player_details(player['player_id'], team1_map_stats)
+                
+            for player in faction2['roster']:  
+                team2_player_stats[player['nickname']] = get_player_details(player['player_id'], team2_map_stats)
+            final_response = {
+            f'{faction1_name}': {"map_statistics": calculate_team_map_win_rate(team1_player_stats), "player_statistics": team1_player_stats},
+            f'{faction2_name}': {"map_statistics": calculate_team_map_win_rate(team2_player_stats), "player_statistics": team2_player_stats}
+            }
+            team1_map_stats.clear()
+            team2_map_stats.clear()
+            processTimeStop = process_time()
+            print("Elapsed time during the whole program in seconds:", processTimeStop-processTimeStart)  
+            return jsonify(final_response), 200
+        return jsonify({"error": "Match not found"}), 404
+    except TimeoutError as e:
+        return jsonify({"error": "Timeout", "message": str(e)}), 408
 
 
 

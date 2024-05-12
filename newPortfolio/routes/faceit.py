@@ -3,6 +3,8 @@ import requests
 from assets.apiKey import api_key
 import json
 from time import process_time
+from scripts.timeout import timeout
+import time #for testing purpose
 
 game_id = 'cs2'
 # Set the headers, including the Authorization header with the API key
@@ -14,10 +16,12 @@ headers = {
 
 faceit_blueprint = Blueprint('faceit', __name__)
 @faceit_blueprint.route('/api/faceit', methods=['POST'])
+@timeout(seconds=5)
 def getBestMapList():
     processTimeStart = process_time()
     #initialize dictionary for team 1 and team 2, team1_map_stats contains map statistic for whole team
     #team1_player_stats contains each player statistics in a team
+    time.sleep(6) #for testing purpose
     team1_map_stats = {}
     team1_player_stats = {}
     team2_map_stats = {}

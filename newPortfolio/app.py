@@ -7,6 +7,7 @@ from routes.topics import topics_blueprint
 from routes.first_image import first_image_blueprint
 from routes.newspaper_overview import newspaper_overview_blueprint
 from routes.faceit import faceit_blueprint
+from scripts.timeout import handle_timeout_error, TimeoutException
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -19,6 +20,8 @@ app.register_blueprint(topics_blueprint)
 app.register_blueprint(first_image_blueprint)
 app.register_blueprint(newspaper_overview_blueprint)
 app.register_blueprint(faceit_blueprint)
+app.register_error_handler(TimeoutException, handle_timeout_error)
 
 if __name__ == '__main__':
+    #app.run(host = "0.0.0.0", port = "5000", debug=True)
     app.run(host= "0.0.0.0",port = "5000", debug=True, ssl_context=('/etc/letsencrypt/live/trungthieu1999.social/fullchain.pem','/etc/letsencrypt/live/trungthieu1999.social/privkey.pem'))

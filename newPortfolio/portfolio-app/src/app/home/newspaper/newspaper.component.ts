@@ -7,7 +7,7 @@ import Swiper from 'swiper';
   templateUrl: './newspaper.component.html',
   styleUrls: ['./newspaper.component.css'],
 })
-export class NewspaperComponent implements OnInit, OnChanges, AfterViewInit {
+export class NewspaperComponent implements OnInit, OnChanges {
   newspapers: any[] = [];
   @Input() topic: string = '';
 
@@ -15,24 +15,6 @@ export class NewspaperComponent implements OnInit, OnChanges, AfterViewInit {
 
   ngOnInit(): void {
     this.loadNewspapers();
-  }
-
-  ngAfterViewInit(): void {
-    const swiper = new Swiper('.swiper-container', {
-      loop: true,
-      navigation: true,
-      autoHeight: true,
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 10
-        },
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 20
-        }
-      }
-    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {

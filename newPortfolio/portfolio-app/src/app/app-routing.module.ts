@@ -8,6 +8,7 @@ import { FaceitComponent } from './faceit/faceit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home' ,component: HomeComponent},
   { path: 'skills', component: PortfolioComponent },
   { path: 'contacts', component:  ContactComponent},
   { path: 'codings', component: CodingComponent},

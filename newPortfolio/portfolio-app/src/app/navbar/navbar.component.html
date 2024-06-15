@@ -1,0 +1,25 @@
+<nav class="flex-row margin10">
+    <div>
+        <button mat-button class="mat-button" [matMenuTriggerFor]="menu">Topics</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item *ngFor="let topic of topics" class="mat-button-menu" (click)="selectTopic(topic)">
+                {{ topic.name }}
+            </button>
+        </mat-menu>
+    </div>
+    <div>
+        <button mat-button class="mat-button" (click)="navigateTo('/')">Home</button>
+    </div>
+    <div>
+        <button mat-button class="mat-button" (click)="navigateTo('/codings')">Coding</button>
+    </div>
+    <div>
+        <button mat-button class="mat-button" (click)="navigateTo('/skills')">About Me</button>
+    </div>
+    <div>
+        <button mat-button class="mat-button" (click)="navigateTo('/contacts')">Contact</button>
+    </div>
+    <div>
+        <button mat-button class="mat-button" (click)="navigateTo('/faceit')">Faceit Checker</button>
+    </div>
+</nav>

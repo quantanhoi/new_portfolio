@@ -6,15 +6,12 @@
 }
 
 .newspaper-box {
-
-
-
-    border: 1px solid #333;
+    border: 2px solid white;
     padding: 10px;
     margin: 10px;
-    align-items: left; 
-    gap: 5px; 
-    width: 45%;
+    align-items: left;
+    gap: 5px;
+    width: 30%;
     border-radius: 10px;
     font-size: 1em;
     font-weight: 700;
@@ -27,7 +24,7 @@
 
 .newspaper-box a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .newspaper-box a:hover {
@@ -36,6 +33,7 @@
 
 
 .topic-text {
+    color: white;
     font-size: 0.8em;
     font-weight: 350;
     font-style: bold;
@@ -80,4 +78,21 @@
 .newspaper-title {
     font-family: 'Playfair Display', serif;
     font-size: large;
+}
+
+swiper-container {
+    max-height: 100vw;
+    min-height: 0;
+    min-width: 0;
+    max-width: 90vw;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
 }

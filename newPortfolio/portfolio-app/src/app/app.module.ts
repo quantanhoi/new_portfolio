@@ -1,7 +1,9 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule, isDevMode, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from'@angular/material/menu';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +16,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { ContactComponent } from './contact/contact.component';
 import { CodingComponent } from './coding/coding.component';
 import { FaceitComponent } from './faceit/faceit.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,8 @@ import { FaceitComponent } from './faceit/faceit.component';
     PortfolioComponent,
     ContactComponent,
     CodingComponent,
-    FaceitComponent
+    FaceitComponent,
+    NavbarComponent
   ],
   imports: [
     HttpClientModule,
@@ -37,9 +42,16 @@ import { FaceitComponent } from './faceit/faceit.component';
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatMenuModule,
+    
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    provideAnimationsAsync()
+  ],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

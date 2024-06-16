@@ -3,6 +3,7 @@
     justify-content: left;
     width: 100%;
     flex-wrap: wrap;
+    margin-left: 1vh;
 }
 
 .project {
@@ -11,8 +12,16 @@
     padding: 1rem;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #ccc;
+    background-color: #3c4f5e    ;
     margin: 1rem;
+    box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,
+            100%, 0.075),
+        /* shadow ring 👇 */
+        0 0 0 1px hsla(0, 0%, 0%, 0.05),
+        /* multiple soft shadows 👇 */
+        0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+        0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+        0 3.5px 6px hsla(0, 0%, 0%, 0.09);
 }
 
 .project:hover {
@@ -35,10 +44,76 @@ a {
 #project-section {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
+    margin-left: 1vh;
 }
 
 #about {
     color: white;
+    margin-left: 1vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#about-text {
+    width: 20%;
+    margin-right: 2vh;
+    margin-left: 2vh;
+    padding: 2vh;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-radius: 30px;
+    font-size: 1.2rem;
+}
+
+#about-me {
+    align-self: center;
+}
+
+
+#skills {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin: 4vh;
+}
+
+.skillset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 2vh;
+    width: 80%;
+}
+
+.skill {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,
+            100%, 0.075),
+        /* shadow ring 👇 */
+        0 0 0 1px hsla(0, 0%, 0%, 0.05),
+        /* multiple soft shadows 👇 */
+        0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+        0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+        0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+    border-radius: 20px;
+    padding: 1vh;
+    margin: 1vh;
+    display: flex; /* Ensure the inner elements of .skill are in a row */
+    flex-direction: column;
+    align-items: center;
+    background-color: #6a55b4;
+}
+
+
+.skill img {
+    width: 60px;
+    height: auto;
+    margin-right: 1vh;
 }
 
 

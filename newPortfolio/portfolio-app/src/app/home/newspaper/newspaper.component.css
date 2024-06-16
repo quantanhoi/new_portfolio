@@ -3,10 +3,46 @@
     justify-content: left;
     width: 100%;
     flex-wrap: wrap;
+    --background-color: #18181B;
+    --text-color: #A1A1AA;
+    --card-background-color: rgba(255, 255, 255, .015);
+    --card-border-color: rgba(255, 255, 255, 0.1);
+    --card-box-shadow-1: rgba(0, 0, 0, 0.05);
+    --card-box-shadow-1-y: 3px;
+    --card-box-shadow-1-blur: 6px;
+    --card-box-shadow-2: rgba(0, 0, 0, 0.1);
+    --card-box-shadow-2-y: 8px;
+    --card-box-shadow-2-blur: 15px;
+    --card-label-color: #FFFFFF;
+    --card-icon-color: #D4D4D8;
+    --card-icon-background-color: rgba(255, 255, 255, 0.08);
+    --card-icon-border-color: rgba(255, 255, 255, 0.12);
+    --card-shine-opacity: .1;
+    --card-shine-gradient: conic-gradient(from 205deg at 50% 50%, rgba(16, 185, 129, 0) 0deg, #10B981 25deg, rgba(52, 211, 153, 0.18) 295deg, rgba(16, 185, 129, 0) 360deg);
+    --card-line-color: #2A2B2C;
+    --card-tile-color: rgba(16, 185, 129, 0.05);
+    --card-hover-border-color: rgba(255, 255, 255, 0.2);
+    --card-hover-box-shadow-1: rgba(0, 0, 0, 0.04);
+    --card-hover-box-shadow-1-y: 5px;
+    --card-hover-box-shadow-1-blur: 10px;
+    --card-hover-box-shadow-2: rgba(0, 0, 0, 0.3);
+    --card-hover-box-shadow-2-y: 15px;
+    --card-hover-box-shadow-2-blur: 25px;
+    --card-hover-icon-color: #34D399;
+    --card-hover-icon-background-color: rgba(52, 211, 153, 0.1);
+    --card-hover-icon-border-color: rgba(52, 211, 153, 0.2);
 }
 
 .newspaper-box {
-    border: 2px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,
+            100%, 0.075),
+        /* shadow ring 👇 */
+        0 0 0 1px hsla(0, 0%, 0%, 0.05),
+        /* multiple soft shadows 👇 */
+        0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+        0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+        0 3.5px 6px hsla(0, 0%, 0%, 0.09);
     padding: 10px;
     margin: 10px;
     align-items: left;
@@ -35,6 +71,13 @@
     font-weight: 350;
     font-style: bold;
     font-family: 'Playfair Display', serif;
+    font-size: medium;
+    margin-top: 5px;
+}
+
+.topic-text:hover {
+    text-decoration: underline;
+    color: rgb(241, 187, 9);
 }
 
 .newspaper-box a:before {
@@ -63,6 +106,7 @@
     letter-spacing: 10px;
     width: 100%;
     height: 100%;
+
 }
 
 .newspaper-box a:before {
@@ -93,7 +137,15 @@ swiper-slide {
 }
 
 .newspaper-slide {
-    border: 2px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,
+            100%, 0.075),
+        /* shadow ring 👇 */
+        0 0 0 1px hsla(0, 0%, 0%, 0.05),
+        /* multiple soft shadows 👇 */
+        0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+        0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+        0 3.5px 6px hsla(0, 0%, 0%, 0.09);
     padding: 10px;
     margin: 10px;
     gap: 5px;
@@ -127,6 +179,7 @@ swiper-slide {
 .first-image-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure images cover the full area */
+    object-fit: cover;
+    /* Ensure images cover the full area */
     border: 1px solid white;
 }

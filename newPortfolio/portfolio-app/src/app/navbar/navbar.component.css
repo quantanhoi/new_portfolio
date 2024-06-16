@@ -3,6 +3,11 @@
     flex-direction: row;
     justify-content: flex-end;
 }
+.margin10 {
+    margin-top:10px;
+    margin-bottom: 2vh;
+}
+
 
 .navButton {
     margin: 10px;
@@ -24,6 +29,9 @@
     margin: 10px;
     color: white !important;
     background-color: transparent;
+    font-size: large;
+    font-family: "Gill Sans", sans-serif;
+
 }
 
 .mat-menu-item {
@@ -64,4 +72,13 @@
 
 .dropdown-item:hover {
     background-color: #ddd;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    height: 70px; /* Adjust as needed */
+    margin-left: 10px;
 }

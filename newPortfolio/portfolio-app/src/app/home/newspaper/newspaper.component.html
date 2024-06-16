@@ -3,8 +3,8 @@
     <ng-container *ngFor="let newspaper of newspapers | slice:0:3">
         <swiper-slide>
             <div class="newspaper-slide">
-                <a class="newspaper-title" [href]="newspaper.url" target="_blank">{{ newspaper.title }}</a>
-                <p class="topic-text">Topic: {{ newspaper.topic }}</p>
+                <a class="newspaper-title" style="margin-bottom: 10px;" [href]="newspaper.url" target="_blank">{{ newspaper.title }}</a>
+                <p class="topic-text" (click)="filterNewspapers(newspaper.topic)">Topic: {{ newspaper.topic }}</p>
                 <app-first-image class="first-image-slide" [newspaperUrl]="newspaper.url"></app-first-image>
             </div>
         </swiper-slide>
@@ -13,7 +13,7 @@
 <section class="content-container">
     <div *ngFor="let newspaper of newspapers" class="newspaper-box">
         <a class="newspaper-title" [href]="newspaper.url" target="_blank">{{ newspaper.title }}</a>
-        <p class="topic-text">Topic: {{ newspaper.topic }}</p>
+        <p class="topic-text" (click)="filterNewspapers(newspaper.topic)">Topic: {{ newspaper.topic }}</p>
         <app-first-image class="first-image-slide" [newspaperUrl]="newspaper.url"></app-first-image>
     </div>
 </section>

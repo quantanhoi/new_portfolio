@@ -8,11 +8,14 @@ import Swiper from 'swiper';
   styleUrls: ['./newspaper.component.css'],
 })
 export class NewspaperComponent implements OnInit, OnChanges {
+  //declare the attributes that will be used in the html files
   newspapers: any[] = [];
   @Input() topic: string = '';
 
   constructor(private newspaperService: NewspaperService) {}
 
+
+  //call load newspaper on initialization
   ngOnInit(): void {
     this.loadNewspapers();
   }
@@ -23,6 +26,7 @@ export class NewspaperComponent implements OnInit, OnChanges {
     }
   }
 
+  //calling service to load newspaper with api url
   loadNewspapers(): void {
     this.newspaperService.getNewspapers().subscribe((data) => {
       this.newspapers = data.filter((article) => article.topic !== 'Code');

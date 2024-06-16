@@ -7,6 +7,10 @@
 
 }
 
+.white-text {
+    color: white;
+}
+
 .input_bar {
     flex: 1;
     flex-grow: 1;
@@ -17,6 +21,7 @@
     max-width: 90%;
     height: 40px;
     background-color: transparent;
+    color: white;
 
 }
 
@@ -34,7 +39,6 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    border: 1px solid black;
 }
 
 
@@ -52,9 +56,14 @@
     text-align: left;
     padding: 8px;
 }
-
+.match_detail tr:nth-child(odd) {
+    background-color: #33312c;
+    color: white;
+    /* Adds a background color to every other row */
+}
 .match_detail tr:nth-child(even) {
     background-color: #f2f2f2;
+    color: black;
     /* Adds a background color to every other row */
 }
 
@@ -66,7 +75,6 @@
 
 .team_detail {
     display: flex;
-    border: 1px solid black;
     border-radius: 10px;
     padding: 20px;
     flex-direction: column;

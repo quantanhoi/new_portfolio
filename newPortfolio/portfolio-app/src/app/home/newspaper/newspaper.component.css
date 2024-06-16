@@ -16,8 +16,6 @@
     font-size: 1em;
     font-weight: 700;
     font-style: bold;
-
-    /*color animation hoovering*/
     overflow: hidden;
     position: relative;
 }
@@ -30,7 +28,6 @@
 .newspaper-box a:hover {
     text-decoration: underline;
 }
-
 
 .topic-text {
     color: white;
@@ -72,9 +69,6 @@
     background: #ffeaa7;
 }
 
-
-
-
 .newspaper-title {
     font-family: 'Playfair Display', serif;
     font-size: large;
@@ -98,3 +92,41 @@ swiper-slide {
     width: auto;
 }
 
+.newspaper-slide {
+    border: 2px solid white;
+    padding: 10px;
+    margin: 10px;
+    gap: 5px;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 700;
+    font-style: bold;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.newspaper-slide a {
+    text-decoration: none;
+    color: white;
+}
+
+.first-image-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-image-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the full area */
+    border: 1px solid white;
+}

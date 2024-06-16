@@ -1,18 +1,19 @@
-<swiper-container slides-per-view="1" loop="true" css-mode="true" navigation="true" autoplay="true" autoplay-delay="3000">
-    <swiper-slide>
-        <img src="assets/ai-image.png" alt="ai-image">
-    </swiper-slide>
-    <swiper-slide>
-        <img src="assets/ai-image2.png" alt="ai-image">
-    </swiper-slide>
-    <swiper-slide>
-        <img src="assets/ai-image3.png" alt="ai-image">
-    </swiper-slide>
+<swiper-container slides-per-view="1" loop="true" css-mode="true" navigation="true"
+    autoplay="true">
+    <ng-container *ngFor="let newspaper of newspapers | slice:0:3">
+        <swiper-slide>
+            <div class="newspaper-slide">
+                <a class="newspaper-title" [href]="newspaper.url" target="_blank">{{ newspaper.title }}</a>
+                <p class="topic-text">Topic: {{ newspaper.topic }}</p>
+                <app-first-image class="first-image-slide" [newspaperUrl]="newspaper.url"></app-first-image>
+            </div>
+        </swiper-slide>
+    </ng-container>
 </swiper-container>
 <section class="content-container">
     <div *ngFor="let newspaper of newspapers" class="newspaper-box">
         <a class="newspaper-title" [href]="newspaper.url" target="_blank">{{ newspaper.title }}</a>
         <p class="topic-text">Topic: {{ newspaper.topic }}</p>
-        <app-first-image class="first-image" [newspaperUrl]="newspaper.url"></app-first-image>
+        <app-first-image class="first-image-slide" [newspaperUrl]="newspaper.url"></app-first-image>
     </div>
 </section>

@@ -4,8 +4,11 @@
     justify-content: flex-end;
 }
 .margin10 {
-    margin-top:10px;
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
+}
+.nav_background {
+    background-color: #8786a336;
+
 }
 
 
@@ -27,11 +30,14 @@
 
 .mat-button {
     margin: 10px;
+    padding-top: 10px;
     color: white !important;
     background-color: transparent;
     font-size: large;
     font-family: "Gill Sans", sans-serif;
-
+}
+.mat-button:hover {
+    color: rgb(241, 187, 9) !important;
 }
 
 .mat-menu-item {
@@ -79,6 +85,8 @@
 }
 
 .logo {
-    height: 70px; /* Adjust as needed */
+    margin-top: 5px;
+    width: auto;
+    height: 55px; /* Adjust as needed */
     margin-left: 10px;
 }
